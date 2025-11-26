@@ -329,14 +329,14 @@ const BookingForm: React.FC = () => {
           </div>
 
           {/* Helmet and Gloves Checkbox */}
-          <div className="flex items-start">
+          <div className="flex items-center">
             <input
               type="checkbox"
               id="helmetAndGloves"
               name="helmetAndGloves"
               checked={formData.helmetAndGloves}
               onChange={handleChange}
-              className="mt-1 w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
+              className="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
             />
             <label htmlFor="helmetAndGloves" className="ml-3 text-sm text-navy">
               I need a helmet and gloves
@@ -344,7 +344,7 @@ const BookingForm: React.FC = () => {
           </div>
 
           {/* Terms Checkbox */}
-          <div className="flex items-start">
+          <div className="flex items-center">
             <input
               type="checkbox"
               id="termsAccepted"
@@ -352,7 +352,7 @@ const BookingForm: React.FC = () => {
               required
               checked={formData.termsAccepted}
               onChange={handleChange}
-              className="mt-1 w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
+              className="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
             />
             <label htmlFor="termsAccepted" className="ml-3 text-sm text-navy">
               I agree to the Terms and Conditions <span className="text-orange-500">*</span>
