@@ -145,6 +145,7 @@ const BookingForm: React.FC = () => {
         body: JSON.stringify({
           ...formData,
           totalPrice,
+          totalBookingPriceFormatted: `€${totalPrice.toFixed(2)}`,
           days,
           submittedAt: new Date().toISOString(),
         }),
