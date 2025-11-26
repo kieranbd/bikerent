@@ -5,6 +5,7 @@ interface Bike {
   title: string;
   price: string;
   image: string;
+  bikeType: string;
 }
 
 const bikes: Bike[] = [
@@ -12,30 +13,36 @@ const bikes: Bike[] = [
     id: 1,
     title: 'Hardtail',
     price: '€35 / day',
-    image: 'https://via.placeholder.com/400x300?text=Hardtail+Bike'
+    image: '/media/hardtail-bike.jpeg',
+    bikeType: 'Hardtail'
   },
   {
     id: 2,
     title: 'Marathon / Cross-Country',
     price: '€45 / day',
-    image: 'https://via.placeholder.com/400x300?text=Cross+Country+Bike'
+    image: '/media/xc-bike.jpeg',
+    bikeType: 'Full suspension: Cross Country'
   },
   {
     id: 3,
     title: 'Trail / Enduro',
     price: '€45 / day',
-    image: 'https://via.placeholder.com/400x300?text=Trail+Bike'
+    image: '/media/trail-bike.jpeg',
+    bikeType: 'Full Suspension: Trail / Enduro'
   },
   {
     id: 4,
     title: 'All-Mountain eBike',
     price: '€60 / day',
-    image: 'https://via.placeholder.com/400x300?text=eBike'
+    image: '/media/ebike.jpeg',
+    bikeType: 'Full Suspension: eBike'
   }
 ];
 
 const BikeSelection: React.FC = () => {
-  const scrollToBooking = () => {
+  const scrollToBooking = (bikeType: string) => {
+    // Store the selected bike type in sessionStorage
+    sessionStorage.setItem('selectedBikeType', bikeType);
     document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -57,18 +64,18 @@ const BikeSelection: React.FC = () => {
                 key={bike.id}
                 className="flex-shrink-0 w-80 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
               >
-                <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
+                <div className="aspect-[4/3] bg-white overflow-hidden flex items-center justify-center">
                   <img
                     src={bike.image}
                     alt={bike.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-navy mb-2">{bike.title}</h3>
                   <p className="text-2xl font-bold text-orange-500 mb-4">{bike.price}</p>
                   <button
-                    onClick={scrollToBooking}
+                    onClick={() => scrollToBooking(bike.bikeType)}
                     className="w-full px-6 py-3 bg-navy text-white font-semibold rounded-lg hover:bg-navy/90 transition-colors flex items-center justify-center gap-2"
                   >
                     Book this bike

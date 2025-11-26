@@ -14,12 +14,13 @@ const Navbar: React.FC = () => {
               src="/media/mountain-bike.png" 
               alt="Bike Rent Cape Town" 
               className="h-10 w-10"
-              style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(30%) saturate(2000%) hue-rotate(200deg) brightness(0.3) contrast(1.2)' }}
+              style={{ filter: 'brightness(0) saturate(100%) invert(12%) sepia(45%) saturate(800%) hue-rotate(195deg) brightness(0.4) contrast(1.1)' }}
             />
             <a 
               href="https://www.flaticon.com/free-icons/bike" 
               title="bike icons"
               className="sr-only"
+              aria-label="Bike icons created by Freepik - Flaticon"
             >
               Bike icons created by Freepik - Flaticon
             </a>

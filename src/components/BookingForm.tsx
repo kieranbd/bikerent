@@ -34,6 +34,54 @@ const BookingForm: React.FC = () => {
     termsAccepted: false,
   });
 
+  // Check for preselected bike type when component mounts or when scrolled into view
+  useEffect(() => {
+    const checkPreselectedBike = () => {
+      const preselected = sessionStorage.getItem('selectedBikeType');
+      if (preselected) {
+        setFormData(prev => {
+          // Only update if it's different and not already set
+          if (prev.bikeType !== preselected) {
+            return {
+              ...prev,
+              bikeType: preselected
+            };
+          }
+          return prev;
+        });
+        // Clear it after using it
+        sessionStorage.removeItem('selectedBikeType');
+      }
+    };
+
+    // Check immediately on mount
+    checkPreselectedBike();
+
+    // Also check when the form section comes into view (in case of smooth scroll)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Small delay to ensure sessionStorage is set and scroll is complete
+            setTimeout(checkPreselectedBike, 300);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const formElement = document.getElementById('booking-form');
+    if (formElement) {
+      observer.observe(formElement);
+    }
+
+    return () => {
+      if (formElement) {
+        observer.disconnect();
+      }
+    };
+  }, []); // Empty dependency array - only run on mount
+
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [days, setDays] = useState<number>(0);
   const [submitting, setSubmitting] = useState(false);

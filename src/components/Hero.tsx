@@ -20,9 +20,9 @@ const Hero: React.FC = () => {
         <div className="max-w-2xl">
           {/* Eyebrow tagline */}
           <div className="inline-block mb-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
-            <span className="text-white text-sm font-medium">
-              <span className="text-2xl inline-block align-middle mr-2">🚲</span>
-              New full-suspension bikes just added
+            <span className="text-white text-sm font-medium flex items-center gap-2">
+              <span className="text-2xl leading-none">🚲</span>
+              <span>New full-suspension bikes just added</span>
             </span>
           </div>
           
@@ -37,16 +37,16 @@ const Hero: React.FC = () => {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
             <button
               onClick={scrollToBikes}
-              className="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+              className="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors whitespace-nowrap"
             >
               View Bikes
             </button>
             <button
               onClick={scrollToBooking}
-              className="px-8 py-3 bg-white text-navy font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="px-8 py-3 bg-white text-navy font-semibold rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"
             >
               Book Your Bike
             </button>
