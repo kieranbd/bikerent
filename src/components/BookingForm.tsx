@@ -134,8 +134,7 @@ const BookingForm: React.FC = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    // TODO: Replace with actual webhook URL
-    const webhookUrl = 'YOUR_WEBHOOK_URL_HERE';
+    const webhookUrl = 'https://whyc.app.n8n.cloud/webhook/bikerent-booking';
 
     try {
       const response = await fetch(webhookUrl, {
