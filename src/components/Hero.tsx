@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           {/* Eyebrow tagline */}
           <div className="inline-block mb-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
             <span className="text-white text-sm font-medium flex items-center gap-2">
-              <span className="text-lg leading-none inline-block" style={{ lineHeight: '1.2em', transform: 'translateY(-0.1em) scale(1.25)' }}>🚲</span>
+              <span className="text-lg leading-none inline-block" style={{ lineHeight: '1.2em', transform: 'translateY(-0.2em) scale(1.25)' }}>🚲</span>
               <span>New full-suspension bikes just added</span>
             </span>
           </div>
