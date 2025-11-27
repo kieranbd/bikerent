@@ -152,6 +152,11 @@ const BookingForm: React.FC = () => {
       });
 
       if (response.ok) {
+        // Track conversion event
+        if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+          (window as any).gtag_report_conversion();
+        }
+        
         setSubmitted(true);
         // Reset form after successful submission
         setTimeout(() => {

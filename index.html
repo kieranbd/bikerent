@@ -24,9 +24,35 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mountain Bike Rental Delivered to Your Door - Bike Rent Cape Town">
     <meta name="twitter:description" content="Hardtail and full-suspension bikes for rent from one day and longer, delivered to your door in Cape Town.">
-    <meta name="twitter:image" content="/media/BRCT og-image.png">
     
     <title>Mountain Bike Rental Delivered to Your Door - Bike Rent Cape Town</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17763571291"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17763571291');
+    </script>
+    
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17763571291/FYxuCL3Q58cbENusqpZC',
+            'value': 1.0,
+            'currency': 'EUR',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
