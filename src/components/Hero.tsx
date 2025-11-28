@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
           
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-            Hardtail and full-suspension bikes for rent from one day and longer, delivered to your door.
+            Hardtail and full-suspension bikes for rent from one day or longer, delivered to your door.
           </p>
           
           {/* CTA Buttons */}

@@ -1,23 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import BikeSelection from './components/BikeSelection';
-import HowItWorks from './components/HowItWorks';
-import BookingForm from './components/BookingForm';
-import FAQs from './components/FAQs';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import ListYourBike from './components/ListYourBike';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <BikeSelection />
-      <HowItWorks />
-      <BookingForm />
-      <FAQs />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/list-your-bike" element={<ListYourBike />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
